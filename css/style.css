@@ -1,0 +1,117 @@
+body{
+    font-family: "Poppins", serif;
+    background-color: #f1f1f1; 
+    background-image: url("/images/concrete_seamless.png");
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.card > header {
+    background-color: #288088;         
+    border: 2px solid #45ADAD;        
+    padding: 20px 0;                 
+    border-top-left-radius: 50px;      
+    border-top-right-radius: 50px;     
+}
+
+.card {
+    flex-basis: 450px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.pricing{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img{
+    border: 10px solid #50C7C7;
+    width: 300px;
+    margin: 10px;
+}
+
+@keyframes logogrow{
+    from{
+        width: 25px;
+        opacity: 0;
+    }
+    to{
+        width: 475px;
+        opacity: 1;
+    } 
+}
+#logo{
+    animation-name: logogrow;
+    animation-duration: 5s;
+}
+
+@media screen and (max-width: 500px){
+    header{
+        display:flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .nav_links{
+        flex-direction: row;
+    }
+    .card{
+        flex-basis: 275px;
+    }
+    .pricing{
+        align-items: center;
+    }
+    
+    header:not(main header){ 
+        position: sticky;
+        top: 0;
+    }
+    
+}
+
+@media all and (prefers-reduced-motion: reduce){
+    #logo{
+        animation: none;
+    }
+}
+
+@media print {
+    body{
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+    nav{
+        width: 100%; 
+    }
+    .nav_links{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .pricing {
+        display: flex;
+        align-items: flex-end; 
+    }
+    .card{
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+    .gallery{
+        display: none;
+    }
+    .card li:nth-child(2)::after{
+        content:"👍";
+    }
+    
+}
